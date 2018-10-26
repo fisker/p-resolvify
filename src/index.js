@@ -1,9 +1,9 @@
-/* resolvify by fisker https://github.com/fisker/p-resolvify */
+/*! resolvify by fisker https://github.com/fisker/p-resolvify */
 
 ;(function(factory) {
   const root = Function('return this')()
   if (typeof define === 'function' && define.amd) {
-    define(function() {
+    define('resolvify', function() {
       return factory()
     })
   } else if (typeof module === 'object' && module.exports) {

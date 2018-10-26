@@ -2,7 +2,7 @@
   "name": "p-resolvify",
   "version": "1.1.1",
   "description": "resolve promise rejection",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "keywords": [
     "promise",
     "resolve",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "update-dependencies": "yarn upgrade-interactive --latest",
-    "build": "rm -rf dist && mkdir dist && babel src/index.js --out-file dist/index.js",
+    "build": "rm -rf dist && mkdir lib && babel src/index.js --out-file lib/index.js",
     "test": "yarn build && jest",
     "release": "np --no-yarn --no-cleanup"
   },
@@ -37,7 +37,7 @@
   "files": [
     "LICENSE",
     "README.md",
-    "dist/index.js",
+    "lib/index.js",
     "package.json"
   ]
 }
