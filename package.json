@@ -15,7 +15,7 @@
   },
   "scripts": {
     "update-dependencies": "yarn upgrade-interactive --latest",
-    "build": "rm -rf dist && mkdir lib && babel src/index.js --out-file lib/index.js",
+    "build": "rm -rf lib && mkdir lib && babel src/index.js --out-file lib/index.js",
     "test": "yarn build && jest",
     "release": "np --no-yarn --no-cleanup"
   },
