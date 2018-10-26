@@ -2,6 +2,10 @@ function reject (x) {
   return Promise.reject(x)
 }
 
+function resolve (x) {
+  return Promise.resolve(x)
+}
+
 function nonPromise (x) {
   return x
 }
@@ -12,6 +16,7 @@ function doubleValue (x) {
 
 module.exports = {
   reject,
+  resolve,
   nonPromise,
   doubleValue
 }

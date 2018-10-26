@@ -1,5 +1,6 @@
 const resolvify = require('../')
 const {
+  resolve,
   reject,
   nonPromise,
   doubleValue,
@@ -50,5 +51,28 @@ describe('test againt rejected promise', () => {
     const doubled = doubleValue(value)
 
     expect(await resolvify(reject, doubleValue)(value)).toBe(doubled)
+  })
+})
+
+describe('test againt resolved promise', () => {
+  test('no resolvify', async () => {
+    const value = Math.random()
+    await expect(resolve(value)).resolves.toBe(value)
+  })
+
+  test('resolve with value promise throws', async () => {
+    const value = Math.random()
+    expect(await resolvify(resolve)(value)).toBe(value)
+  })
+
+  test('resolve with certain value', async () => {
+    const value = Math.random()
+    expect(await resolvify(resolve, 'not me')(value)).toBe(value)
+  })
+
+  test('resolve with handler', async () => {
+    const value = Math.random()
+
+    expect(await resolvify(resolve, doubleValue)(value)).toBe(value)
   })
 })
