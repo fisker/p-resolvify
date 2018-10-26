@@ -1,6 +1,6 @@
 {
   "name": "p-resolvify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "resolve promise rejection",
   "main": "dist/index.js",
   "keywords": [
