@@ -12,6 +12,10 @@ yarn add p-resolvify
 import resolvify from 'p-resolvify'
 ```
 
+```html
+<script src="https://unpkg.com/p-resolvify"></script>
+```
+
 ### resolvify (x: any, handler)
 
 #### x: Function
