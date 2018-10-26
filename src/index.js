@@ -1,3 +1,5 @@
+/* resolvify by fisker https://github.com/fisker/p-resolvify */
+
 ;(function(factory) {
   const root = Function('return this')()
   if (typeof define === 'function' && define.amd) {

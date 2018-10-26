@@ -8,6 +8,7 @@ module.exports = {
           node: '0.8'
         }
       }
-    ]
+    ],
+    'babel-preset-minify'
   ]
 }
