@@ -36,7 +36,7 @@ return promise reject value
 
 ```js
 function aFunctionMaybeReject() {
-  return Math.random() > .5 ? Promise.reject(false) : Promise.resolve(true)
+  return Math.random() > .5 ? Promise.resolve(true) : Promise.reject(false)
 }
 
 // without resolvify
@@ -56,7 +56,6 @@ function aFunctionMaybeReject() {
   const alwaysResolve = resolvify(aFunctionMaybeReject)
 
   let result = await alwaysResolve()
-
   console.log(result)
 })()
 ```
@@ -65,7 +64,7 @@ function aFunctionMaybeReject() {
 
 ```js
 function aFunctionMaybeReject() {
-  return Math.random() > .5 ? Promise.reject(false) : Promise.resolve(true)
+  return Math.random() > .5 ? Promise.resolve(true) : Promise.reject(false)
 }
 
 // without resolvify

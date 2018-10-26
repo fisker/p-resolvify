@@ -7,7 +7,7 @@ const isThenable = x => {
 }
 const resolve = (x, handler) => {
   return isThenable(x)
-    ? new Promise(resolve => x.then(null, err => resolve(handler(err))))
+    ? x.then(null, err => resolve(handler(err)))
     : x
 }
 
