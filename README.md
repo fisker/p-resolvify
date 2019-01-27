@@ -1,4 +1,7 @@
 # p-resolvify
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/fisker/p-resolvify.svg)](https://greenkeeper.io/)
+
  > resolve promise rejection
 
 ## install
