@@ -1,3 +1,5 @@
+require('@babel/polyfill')
+
 const resolvify = require('../')
 const {
   resolve,
@@ -6,7 +8,7 @@ const {
   doubleValue,
 } = require('../test-helpers')
 
-describe('test againt non-promise', () => {
+describe('test against non-promise', () => {
   test('no resolvify', () => {
     const value = Math.random()
     expect(nonPromise(value)).toBe(value)
@@ -30,7 +32,7 @@ describe('test againt non-promise', () => {
   })
 })
 
-describe('test againt rejected promise', () => {
+describe('test against rejected promise', () => {
   test('no resolvify', async () => {
     const err = new Error(Math.random())
     await expect(reject(err)).rejects.toThrow(err)
@@ -54,7 +56,7 @@ describe('test againt rejected promise', () => {
   })
 })
 
-describe('test againt resolved promise', () => {
+describe('test against resolved promise', () => {
   test('no resolvify', async () => {
     const value = Math.random()
     await expect(resolve(value)).resolves.toBe(value)
