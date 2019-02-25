@@ -2475,7 +2475,7 @@ jest-worker@^24.0.0:
     merge-stream "^1.0.1"
     supports-color "^6.1.0"
 
-jest@^24.0.0:
+jest@^24.1.0:
   version "24.1.0"
   resolved "http://registry.npm.taobao.org/jest/download/jest-24.1.0.tgz#b1e1135caefcf2397950ecf7f90e395fde866fd2"
   integrity sha1-seETXK788jl5UOz3+Q45X96Gb9I=
