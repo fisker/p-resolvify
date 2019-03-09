@@ -15,11 +15,13 @@
   },
   "scripts": {
     "update-dependencies": "yarn upgrade-interactive --latest",
+    "dev": "rollup --config --watch",
     "clean": "rm -rf lib",
-    "build": "yarn lint && rollup --config",
+    "build": "npm-run-all lint && rollup --config",
     "lint": "eslint src/**/*.js --fix",
     "test": "jest",
-    "release": "yarn clean && yarn build && yarn test && np --no-yarn --no-cleanup"
+    "dist": "np --no-yarn --no-cleanup",
+    "release": "npm-run-all clean build test dist"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -27,15 +29,13 @@
   "license": "MIT",
   "repository": "fisker/p-resolvify",
   "devDependencies": {
-    "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
-    "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.4",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@xwtec/eslint-config": "^3.7.0",
     "babel-jest": "24.3.1",
-    "babel-preset-minify": "0.5.0",
+    "babel-polyfill": "^6.26.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^5.15.1",
     "husky": "^1.3.1",
@@ -43,8 +43,8 @@
     "lint-staged": "^8.1.5",
     "markdownlint-cli": "^0.14.0",
     "np": "^4.0.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
-    "regenerator-runtime": "0.13.1",
     "rollup": "^1.6.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-terser": "^4.0.4"

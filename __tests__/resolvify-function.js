@@ -1,12 +1,7 @@
-require('@babel/polyfill')
+require('babel-polyfill')
 
 const resolvify = require('../')
-const {
-  resolve,
-  reject,
-  nonPromise,
-  doubleValue,
-} = require('../test-helpers')
+const {resolve, reject, nonPromise, doubleValue} = require('../test-helpers')
 
 describe('test against non-promise', () => {
   test('no resolvify', () => {

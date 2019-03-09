@@ -11,7 +11,5 @@ module.exports = {
         exclude: ['transform-typeof-symbol'],
       },
     ],
-    'babel-preset-minify',
   ],
-  moduleId: 'resolvify',
 }
