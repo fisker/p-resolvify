@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/fisker/p-resolvify.svg)](https://greenkeeper.io/)
 
- > resolve promise rejection
+> resolve promise rejection
 
 ## install
 
@@ -11,8 +11,9 @@ yarn add p-resolvify
 ```
 
 ## ustage
+
 ```js
-import resolvify from 'p-resolvify'
+import resolvify from "p-resolvify"
 ```
 
 ```html
@@ -22,19 +23,24 @@ import resolvify from 'p-resolvify'
 ### resolvify (x: any, handler)
 
 #### x: Function
+
 return a new function will return a promise always resolved.
-* if orignal function not return a thenable object, new function will return the value instead of promise *
+
+- if orignal function not return a thenable object, new function will return the value instead of promise \*
 
 #### x: other
+
 if x is thenable object
 return a new promise will always resolved
 otherwise
 return x
 
 #### handler: function
+
 promise reject error will pass through handler and then return
 
 ### handler: other
+
 return promise reject value
 
 ## examples
@@ -43,7 +49,7 @@ return promise reject value
 
 ```js
 function aFunctionMaybeReject() {
-  return Math.random() > .5 ? Promise.resolve(true) : Promise.reject(false)
+  return Math.random() > 0.5 ? Promise.resolve(true) : Promise.reject(false)
 }
 
 // without resolvify
@@ -71,7 +77,7 @@ function aFunctionMaybeReject() {
 
 ```js
 function aFunctionMaybeReject() {
-  return Math.random() > .5 ? Promise.resolve(true) : Promise.reject(false)
+  return Math.random() > 0.5 ? Promise.resolve(true) : Promise.reject(false)
 }
 
 // without resolvify
