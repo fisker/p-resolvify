@@ -33,7 +33,7 @@
     "@babel/preset-env": "7.4.2",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@xwtec/eslint-config": "^3.7.0",
+    "@xwtec/eslint-config": "^4.0.1",
     "babel-jest": "24.5.0",
     "babel-polyfill": "^6.26.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
