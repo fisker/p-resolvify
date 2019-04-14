@@ -13,7 +13,7 @@ yarn add p-resolvify
 ## ustage
 
 ```js
-import resolvify from "p-resolvify"
+import resolvify from 'p-resolvify'
 ```
 
 ```html

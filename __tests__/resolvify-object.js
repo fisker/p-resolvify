@@ -1,7 +1,7 @@
-require('babel-polyfill')
+import 'babel-polyfill'
+import resolvify from '../src'
 
-const resolvify = require('../')
-const {resolve, reject, nonPromise, doubleValue} = require('../test-helpers')
+import {resolve, reject, nonPromise, doubleValue} from '../test-helpers'
 
 describe('test against non-promise', () => {
   test('no resolvify', async () => {
@@ -34,8 +34,8 @@ describe('test against non-promise', () => {
 
 describe('test against rejected promise', () => {
   test('no resolvify', async () => {
-    const err = new Error(Math.random())
-    await expect(reject(err)).rejects.toThrow(err)
+    const error = new Error(Math.random())
+    await expect(reject(error)).rejects.toThrow(error)
   })
 
   test('resolve with value promise throws', async () => {
