@@ -7,7 +7,11 @@
   "browser": "lib/index.js",
   "unpkg": "lib/index.js",
   "jsdelivr": "lib/index.js",
-  "keywords": ["promise", "resolve", "rejection"],
+  "keywords": [
+    "promise",
+    "resolve",
+    "rejection"
+  ],
   "author": {
     "name": "fisker Cheung",
     "email": "lionkay@gmail.com",
@@ -19,16 +23,18 @@
     "build": "run-p build:*",
     "build:js": "rollup --config",
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint **/*.{js,mjs,vue} --fix",
-    "lint:markdown": "markdownlint **/*.md --ignore \"node_modules/**\"",
+    "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
     "release": "run-s clean lint build test prettier dist",
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn",
     "prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "license": "MIT",
   "repository": "fisker/p-resolvify",
@@ -36,25 +42,28 @@
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4",
     "@commitlint/cli": "^7.5.2",
-    "@commitlint/config-conventional": "^7.5.0",
+    "@fisker/commitlint-config": "^1.0.2",
+    "@fisker/eslint-config": "^1.0.7",
+    "@fisker/eslint-config-jest": "^1.0.1",
+    "@fisker/lint-staged-config": "^1.0.1",
+    "@fisker/prettier-config": "^1.0.11",
     "babel-jest": "^24.7.1",
     "babel-polyfill": "^6.26.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-fisker": "^4.5.0",
     "husky": "^2.1.0",
     "jest": "^24.7.1",
     "lint-staged": "^8.1.5",
     "markdownlint-cli": "^0.15.0",
-    "np": "^5.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.0",
-    "prettier-config-fisker": "^1.0.3",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-terser": "^4.0.4"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog-emoji"

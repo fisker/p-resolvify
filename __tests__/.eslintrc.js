@@ -11,7 +11,7 @@ module.exports = {
   root: true,
   env: {},
   parserOptions: {},
-  extends: ['@fisker'],
+  extends: ['@fisker', '@fisker/jest'],
   settings: {},
   rules: {},
   plugins: [],
