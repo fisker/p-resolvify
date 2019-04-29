@@ -1,12 +1,12 @@
 # p-resolvify
 
-[![gzip size](http://img.badgesize.io/https://unpkg.com/p-resolvify/lib/index.min.mjs?compression=gzip&label=gzip%20size&style=flat-square)](https://unpkg.com/p-resolvify/lib/)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/p-resolvify/lib/index.mjs?compression=gzip&label=gzip%20size&style=flat-square)](https://unpkg.com/p-resolvify/lib/)
 [![downloads](https://img.shields.io/npm/dm/p-resolvify.svg?style=flat-square)](https://www.npmtrends.com/p-resolvify)
 [![module formats: umd, cjs, and es](https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=flat-square)](https://unpkg.com/p-resolvify/lib/)
-[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/p-resolvify/badge)](https://www.jsdelivr.com/package/npm/p-resolvify)
 
 [![Build Status](https://img.shields.io/travis/fisker/p-resolvify.svg?style=flat-square)](https://travis-ci.org/fisker/p-resolvify)
-[![Code Coverage](https://img.shields.io/codecov/c/github/fisker/p-resolvify.svg?style=flat-square)](https://codecov.io/github/fisker/p-resolvify)
+[![Code Coverage](https://img.shields.io/coveralls/github/fisker/p-resolvify.svg?style=flat-square)](https://coveralls.io/github/fisker/p-resolvify)
 [![MIT License](https://img.shields.io/npm/l/p-resolvify.svg?style=flat-square)](https://github.com/fisker/p-resolvify/blob/master/license)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
