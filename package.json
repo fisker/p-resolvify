@@ -59,7 +59,7 @@
     "prettier": "^1.17.1",
     "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^5.0.0"
   },
   "files": [
     "lib"
