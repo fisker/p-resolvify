@@ -50,7 +50,7 @@
     "@fisker/eslint-config-jest": "1.1.14",
     "@fisker/husky-config": "1.1.5",
     "@fisker/lint-staged-config": "1.0.6",
-    "@fisker/prettier-config": "1.0.22",
+    "@fisker/prettier-config": "1.0.24",
     "babel-jest": "24.9.0",
     "babel-polyfill": "6.26.0",
     "cz-conventional-changelog-emoji": "0.1.0",
