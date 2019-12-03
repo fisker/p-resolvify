@@ -3,7 +3,7 @@ import {terser} from 'rollup-plugin-terser'
 
 const plugins = [babel(), terser()]
 
-const DEST = './lib/'
+const DEST = './dist/'
 
 export default {
   input: './src/index.js',
