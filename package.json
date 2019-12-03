@@ -2,45 +2,54 @@
   "name": "p-resolvify",
   "version": "1.2.0",
   "description": "resolve promise rejection",
-  "main": "lib/index.common.js",
-  "module": "lib/index.mjs",
-  "browser": "lib/index.js",
-  "unpkg": "lib/index.js",
-  "jsdelivr": "lib/index.js",
   "keywords": [
     "promise",
-    "resolve",
-    "rejection"
+    "rejection",
+    "resolve"
   ],
+  "repository": "fisker/p-resolvify",
+  "license": "MIT",
   "author": {
     "name": "fisker Cheung",
     "email": "lionkay@gmail.com",
     "url": "https://www.fiskercheung.com/"
   },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "dist/index.common.js",
+  "jsdelivr": "dist/index.js",
+  "unpkg": "dist/index.js",
+  "module": "dist/index.mjs",
+  "browser": "dist/index.js",
   "scripts": {
     "build": "run-p build:*",
     "build:js": "rollup --config",
-    "clean": "rm -rf lib",
+    "clean": "run-p clean:*",
+    "clean:dist": "del-cli dist",
     "dev": "rollup --config --watch",
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
-    "format:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --write",
+    "format:markdown": "yarn lint:markdown --fix",
+    "format:package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
+    "format:prettier": "yarn lint:prettier --write",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
+    "lint:package-json": "yarn run format:package-json --check",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean lint build test format dist",
     "test": "jest",
     "test-coverage": "jest --coverage"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
-  "license": "MIT",
-  "repository": "fisker/p-resolvify",
   "devDependencies": {
     "@babel/core": "7.7.4",
     "@babel/preset-env": "7.7.4",
@@ -53,7 +62,8 @@
     "@fisker/prettier-config": "1.0.24",
     "babel-jest": "24.9.0",
     "babel-polyfill": "6.26.0",
-    "cz-conventional-changelog-emoji": "0.1.0",
+    "cz-conventional-changelog": "3.0.2",
+    "del-cli": "3.0.0",
     "eslint": "6.7.2",
     "husky": "3.1.0",
     "jest": "24.9.0",
@@ -63,15 +73,11 @@
     "prettier": "1.19.1",
     "rollup": "1.27.8",
     "rollup-plugin-babel": "4.3.3",
-    "rollup-plugin-terser": "5.1.2"
+    "rollup-plugin-terser": "5.1.2",
+    "sort-package-json": "1.30.0"
   },
-  "files": [
-    "lib"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-emoji"
-    }
-  },
-  "sideEffects": false
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
