@@ -1,6 +1,6 @@
 {
   "name": "p-resolvify",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "resolve promise rejection",
   "keywords": [
     "promise",
