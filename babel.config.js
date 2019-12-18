@@ -1,5 +1,4 @@
 module.exports = {
-  plugins: ['babel-plugin-transform-async-to-promises'],
   presets: [
     [
       '@babel/preset-env',
@@ -8,8 +7,15 @@ module.exports = {
         targets: {
           node: '0.8',
         },
-        exclude: ['transform-typeof-symbol'],
+        exclude: ['transform-typeof-symbol', 'proposal-object-rest-spread'],
       },
+    ],
+  ],
+  plugins: [
+    'babel-plugin-transform-async-to-promises',
+    [
+      '@babel/plugin-proposal-object-rest-spread',
+      {loose: true, useBuiltIns: true},
     ],
   ],
 }
