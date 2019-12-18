@@ -1,7 +1,7 @@
 # p-resolvify
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![gzip size](http://img.badgesize.io/https://unpkg.com/p-resolvify/dist/index.mjs?compression=gzip&label=gzip%20size&style=flat-square)](https://unpkg.com/p-resolvify/dist/)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/p-resolvify/dist/index.min.mjs?compression=gzip&label=gzip%20size&style=flat-square)](https://unpkg.com/p-resolvify/dist/)
 [![downloads](https://img.shields.io/npm/dm/p-resolvify.svg?style=flat-square)](https://www.npmtrends.com/p-resolvify)
 [![module formats: umd, cjs, and es](https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=flat-square)](https://unpkg.com/p-resolvify/dist/)
 
