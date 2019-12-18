@@ -10,15 +10,15 @@
 [![MIT License](https://img.shields.io/npm/l/p-resolvify.svg?style=flat-square)](https://github.com/fisker/p-resolvify/blob/master/license)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-> resolve promise rejection
+> Handle promise rejection like resolved
 
-## install
+## Install
 
-```sh
+```bash
 yarn add p-resolvify
 ```
 
-## ustage
+## Usage
 
 ```js
 import resolvify from 'p-resolvify'
@@ -28,86 +28,73 @@ import resolvify from 'p-resolvify'
 <script src="https://unpkg.com/p-resolvify"></script>
 ```
 
-### resolvify (x: any, handler)
+### API
 
-#### x: Function
-
-return a new function will return a promise always resolved.
-
-- if orignal function not return a thenable object, new function will return the value instead of promise \*
-
-#### x: other
-
-if x is thenable object
-return a new promise will always resolved
-otherwise
-return x
-
-#### handler: function
-
-promise reject error will pass through handler and then return
-
-### handler: other
-
-return promise reject value
-
-## examples
-
-### resolvify function
+#### resolvify function
 
 ```js
-function aFunctionMaybeReject() {
-  return Math.random() > 0.5 ? Promise.resolve(true) : Promise.reject(false)
-}
+resolvify(function, options?)
+```
 
-// without resolvify
+return a new function returns a promise always resolve.
+
+#### resolvify promise
+
+```js
+resolvify(promise, options?)
+```
+
+return a promise always resolve.
+
+#### options.handler
+
+- type: function
+
+Promise reject error will pass through handler and then return
+
+#### options.to
+
+return value as array
+
+```js
+;(async () => {
+  const [error, result] = await resolvify(promise, {to: true})
+  console.log(error, result)
+})()
+```
+
+## Examples
+
+```js
+const maybeReject = () =>
+  Math.random() > 0.5
+    ? Promise.resolve(true)
+    : Promise.reject(new Error('error.'))
+```
+
+Before, without resolvify
+
+```js
 ;(async () => {
   let result = false
 
   try {
-    result = await aFunctionMaybeReject
+    result = await maybeReject()
   } catch (err) {}
 
-  console.log(result)
-})()
-
-// resolvify
-// no more try/catch
-;(async () => {
-  const alwaysResolve = resolvify(aFunctionMaybeReject)
-
-  let result = await alwaysResolve()
   console.log(result)
 })()
 ```
 
-### resolvify promise
+After, with resolvify
 
 ```js
-function aFunctionMaybeReject() {
-  return Math.random() > 0.5 ? Promise.resolve(true) : Promise.reject(false)
-}
-
-// without resolvify
-;(async () => {
-  const promise = aFunctionMaybeReject()
-
-  let result = false
-
-  try {
-    result = await promise
-  } catch (err) {}
-
-  console.log(result)
-})()
-
-// resolvify
 // no more try/catch
+
+const alwaysResolve = resolvify(maybeReject)
+
 ;(async () => {
-  const promise = aFunctionMaybeReject()
-
-  let result = await resolvify(promise)
-
+  let result = await alwaysResolve()
   console.log(result)
 })()
 ```

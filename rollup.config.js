@@ -1,13 +1,11 @@
 import babel from 'rollup-plugin-babel'
 import {terser} from 'rollup-plugin-terser'
-
-const plugins = [babel(), terser()]
+import cartesianProduct from 'fast-cartesian-product'
 
 const DEST = './dist/'
 
-export default {
-  input: './src/index.js',
-  output: [
+export default cartesianProduct([
+  [
     {
       format: 'umd',
       name: 'resolvify',
@@ -21,9 +19,15 @@ export default {
       format: 'esm',
       file: '.mjs',
     },
-  ].map(config => ({
-    ...config,
-    file: `${DEST}index${config.file}`,
-  })),
-  plugins,
-}
+  ],
+  [true, false],
+]).map(([config, minify]) => ({
+  input: './src/index.js',
+  output: [
+    {
+      ...config,
+      file: `${DEST}index${minify ? '.min' : ''}${config.file}`,
+    },
+  ],
+  plugins: [babel(), minify && terser()],
+}))

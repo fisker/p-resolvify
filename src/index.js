@@ -1,23 +1,33 @@
-import identity from './utils/identity'
-import returnThis from './utils/return-this'
-import isFunction from './utils/is-function'
-import isThenable from './utils/is-thenable'
+const identity = x => x
 
-const toFunction = x => (isFunction(x) ? x : returnThis(x))
-
-const resolve = (x, handler) =>
-  isThenable(x) ? x.then(null, error => resolve(handler(error))) : x
-
-function resolvify(x, handler = identity) {
-  handler = toFunction(handler)
-
-  if (isFunction(x)) {
-    return function(...arguments_) {
-      return resolve(x.apply(this, arguments_), handler)
+function resolvifyFunction(original, {handler, to}) {
+  return async function(...arguments_) {
+    try {
+      const result = await original(...arguments_)
+      return to ? [undefined, result] : result
+    } catch (error) {
+      const handled = handler(error)
+      return to ? [handled] : handled
     }
   }
+}
 
-  return resolve(x, handler)
+function resolvify(original, options) {
+  options = {
+    handler: identity,
+    to: false,
+    ...options,
+  }
+
+  if (typeof original === 'function') {
+    return resolvifyFunction(original, options)
+  }
+
+  return resolvifyFunction(() => original, options)()
+}
+
+resolvify.to = function to(original) {
+  return resolvify(original, {to: true})
 }
 
 export default resolvify
