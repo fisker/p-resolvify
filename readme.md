@@ -63,6 +63,18 @@ return value as array
 })()
 ```
 
+### resolvify.to
+
+shortcut for `options.to`
+
+```js
+resolvify.to(promise)
+
+// equals to
+
+resolvify(promise, {to: true})
+```
+
 ## Examples
 
 ```js
