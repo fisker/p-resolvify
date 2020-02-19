@@ -7,7 +7,12 @@
     "rejection",
     "resolve"
   ],
+  "homepage": "https://github.com/fisker/p-resolvify#readme",
+  "bugs": {
+    "url": "https://github.com/fisker/p-resolvify/issues"
+  },
   "repository": "fisker/p-resolvify",
+  "funding": "https://github.com/fisker/p-resolvify?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",
