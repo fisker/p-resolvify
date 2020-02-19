@@ -56,6 +56,7 @@
     }
   },
   "ava": {
+    "babel": true,
     "require": [
       "esm"
     ],
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
+    "@ava/babel": "1.0.1",
     "@babel/core": "7.8.4",
     "@babel/plugin-proposal-object-rest-spread": "7.8.3",
     "@babel/preset-env": "7.8.4",
