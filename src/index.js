@@ -1,7 +1,7 @@
-const identity = x => x
+const identity = (x) => x
 
 function resolvifyFunction(original, {handler, to}) {
-  return async function(...arguments_) {
+  return async function (...arguments_) {
     try {
       const result = await original(...arguments_)
       return to ? [undefined, result] : result

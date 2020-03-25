@@ -1,7 +1,7 @@
 import test from 'ava'
 import resolvify from '../src'
 
-test('main', async t => {
+test('main', async (t) => {
   t.is(typeof resolvify(() => {}), 'function')
 
   const value = Math.random()
@@ -10,14 +10,14 @@ test('main', async t => {
   t.is(await resolvify(() => Promise.reject(value))(), value)
 })
 
-test('options.handler', async t => {
+test('options.handler', async (t) => {
   const value = Math.random()
-  const handler = value => value * 2
+  const handler = (value) => value * 2
   t.is(await resolvify(() => Promise.resolve(value), {handler})(), value)
   t.is(await resolvify(() => Promise.reject(value), {handler})(), value * 2)
 })
 
-test('options.to', async t => {
+test('options.to', async (t) => {
   const value = Math.random()
 
   t.deepEqual(await resolvify(() => Promise.resolve(value), {to: true})(), [
@@ -30,7 +30,7 @@ test('options.to', async t => {
   ])
 })
 
-test('to shortcut', async t => {
+test('to shortcut', async (t) => {
   const value = Math.random()
 
   t.deepEqual(await resolvify.to(() => Promise.resolve(value))(), [
