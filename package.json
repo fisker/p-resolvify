@@ -85,7 +85,7 @@
     "babel-polyfill": "6.26.0",
     "cz-conventional-changelog": "3.3.0",
     "del-cli": "3.0.1",
-    "eslint": "7.22.0",
+    "eslint": "7.23.0",
     "esm": "3.2.25",
     "fast-cartesian-product": "1.0.3",
     "husky": "5.2.0",
