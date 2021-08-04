@@ -1,5 +1,5 @@
 import test from 'ava'
-import resolvify from '../src'
+import resolvify from '../src/index.js'
 
 test('main', async (t) => {
   t.is(typeof resolvify(() => {}), 'function')

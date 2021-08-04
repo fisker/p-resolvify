@@ -57,10 +57,8 @@ Promise reject error will pass through handler and then return
 return value as array
 
 ```js
-;(async () => {
-  const [error, result] = await resolvify(promise, {to: true})
-  console.log(error, result)
-})()
+const [error, result] = await resolvify(promise, {to: true})
+console.log(error, result)
 ```
 
 ### resolvify.to
@@ -87,26 +85,20 @@ const maybeReject = () =>
 Before, without resolvify
 
 ```js
-;(async () => {
-  let result = false
+let result = false
 
-  try {
-    result = await maybeReject()
-  } catch (err) {}
+try {
+  result = await maybeReject()
+} catch {}
 
-  console.log(result)
-})()
+console.log(result)
 ```
 
 After, with resolvify
 
 ```js
-// no more try/catch
+// `try/catch` is not needed
 
-const alwaysResolve = resolvify(maybeReject)
-
-;(async () => {
-  let result = await alwaysResolve()
-  console.log(result)
-})()
+const result = await resolvify(maybeReject)
+console.log(result)
 ```
