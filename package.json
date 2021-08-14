@@ -85,7 +85,7 @@
     "cz-conventional-changelog": "3.3.0",
     "del-cli": "4.0.1",
     "eslint": "7.32.0",
-    "fast-cartesian-product": "1.0.3",
+    "fast-cartesian-product": "2.0.1",
     "husky": "7.0.1",
     "lint-staged": "11.1.2",
     "markdownlint-cli": "0.28.1",
