@@ -72,7 +72,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "7.20.7",
     "@babel/preset-env": "7.20.2",
-    "@commitlint/cli": "17.4.2",
+    "@commitlint/cli": "17.4.3",
     "@fisker/commitlint-config": "2.0.5",
     "@fisker/eslint-config": "10.2.5",
     "@fisker/eslint-config-ava": "2.0.5",
